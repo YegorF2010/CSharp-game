@@ -35,7 +35,7 @@ namespace ConsoleApplication1 {
             Draw();
         }
 
-        public bool IsHint(Point food) {
+        public bool IsHit(Point food) {
             return x==food.x && y==food.y;
         }
 

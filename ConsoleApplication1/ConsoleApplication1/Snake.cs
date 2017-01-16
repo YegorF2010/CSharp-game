@@ -28,10 +28,18 @@ namespace ConsoleApplication1 {
             head.Draw();
         }
 
+        public bool IsHit(Figure snake) {
+            for(int i=0;i<plist.Count-1;i++) {  //Count-1 !!!т.к. с головой сравнивать не надо!
+                if (plist[i].IsHit(snake.GetHead()))
+                    return true;
+            }
+            return false;
+        }
+
         public bool Eat(Point food) {
             Point head = GetNextPoint();
 
-            if (head.IsHint(food)) {
+            if (head.IsHit(food)) {
                 food.symbol=head.symbol;    //без этой строки все символы змейки станут $ 
                 plist.Add(food);
                 return true;

@@ -12,5 +12,8 @@ namespace ConsoleApplication1 {
             foreach (var el in plist)
                 el.Draw();
         }
+        public Point GetHead() {
+            return plist.Last();
+        }
     }
 }

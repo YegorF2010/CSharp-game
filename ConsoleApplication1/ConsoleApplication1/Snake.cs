@@ -27,6 +27,19 @@ namespace ConsoleApplication1 {
             tail.Clear();
             head.Draw();
         }
+
+        public bool Eat(Point food) {
+            Point head = GetNextPoint();
+
+            if (head.IsHint(food)) {
+                food.symbol=head.symbol;    //без этой строки все символы змейки станут $ 
+                plist.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
+
         Point GetNextPoint() {
             Point head = plist.Last();
             Point NextPoint = new Point(head);

@@ -8,7 +8,7 @@ namespace ConsoleApplication1 {
     class Point {
         public int x { get; set; }
         public int y { get; set; }
-        char symbol;
+        public char symbol;
 
         public Point() { }
         public Point(Point p) {
@@ -34,6 +34,11 @@ namespace ConsoleApplication1 {
             symbol=' ';
             Draw();
         }
+
+        public bool IsHint(Point food) {
+            return x==food.x && y==food.y;
+        }
+
         public override string ToString() {
             return x+", "+y+", "+symbol;
         }

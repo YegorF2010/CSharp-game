@@ -11,17 +11,26 @@ namespace ConsoleApplication1 {
             var line1 = new Framework();
             line1.Draw();
 
-
             var p = new Point(_x:1, _y:6, _s:'*');
             var snake = new Snake(tail:p,length:4,_direction:Direction.RIGHT);
             snake.Draw();
+
+            var food = new Food();
+            var pFood = food.CreateFood();
+            pFood.Draw();
 
             while (true) {
                 if (Console.KeyAvailable) {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.HandleKey(key);
                 }
-                snake.Move();
+                if (snake.Eat(pFood)) {
+                    pFood = food.CreateFood();
+                    pFood.Draw();
+                }
+                else {
+                    snake.Move();
+                }          
                 Thread.Sleep(300);
             }
 

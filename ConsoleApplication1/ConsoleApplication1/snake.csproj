@@ -43,14 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Direction.cs" />
-    <Compile Include="Figure.cs" />
-    <Compile Include="Food.cs" />
-    <Compile Include="Framework.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameSnake.cs" />
+    <Compile Include="Элементы\Direction.cs" />
+    <Compile Include="Элементы\Figure.cs" />
+    <Compile Include="Элементы\Food.cs" />
+    <Compile Include="Элементы\Framework.cs" />
+    <Compile Include="Элементы\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Snake.cs" />
+    <Compile Include="Элементы\Snake.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

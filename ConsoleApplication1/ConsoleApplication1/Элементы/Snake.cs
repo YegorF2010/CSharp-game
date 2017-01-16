@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1 {
     class Snake:Figure {
-        Direction direction; //благодаря методу HandkeKey перечисление можно сделать private
+        Direction direction; //благодаря методу HandleKey перечисление можно сделать private
 
         public Snake(Point tail,int length, Direction _direction) {
             plist=new List<Point>();
@@ -28,7 +28,7 @@ namespace ConsoleApplication1 {
             head.Draw();
         }
 
-        public bool IsHit(Figure snake) {
+        public override bool IsHit(Figure snake) {
             for(int i=0;i<plist.Count-1;i++) {  //Count-1 !!!т.к. с головой сравнивать не надо!
                 if (plist[i].IsHit(snake.GetHead()))
                     return true;
@@ -66,6 +66,9 @@ namespace ConsoleApplication1 {
                 direction=Direction.UP;
             else if (key.Key==ConsoleKey.DownArrow)
                 direction=Direction.DOWN;
+        }
+        public int GetLength() {
+            return plist.Count;
         }
     }
 }

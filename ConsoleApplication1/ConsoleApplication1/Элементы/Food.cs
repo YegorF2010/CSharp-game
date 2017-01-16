@@ -13,7 +13,7 @@ namespace ConsoleApplication1 {
             mapWidth=_mapWidth;
             mapHeight=_mapHeight;
         }
-        public Point CreateFood() {
+        public Point CreateFood() {                     //Фабричный метод
             int x = new Random().Next(2, mapWidth-2);
             int y= new Random().Next(2, mapHeight-2);
             return new Point(x,y,'$');

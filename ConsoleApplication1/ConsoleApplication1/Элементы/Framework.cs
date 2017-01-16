@@ -32,12 +32,6 @@ namespace ConsoleApplication1 {
                 plist.Add(p);
             }
         }
-        public bool IsHit(Figure snake) {
-            foreach(var el in plist) {
-                if (el.IsHit(snake.GetHead()))
-                    return true;
-            }
-            return false;
-        }
+
     }
 }

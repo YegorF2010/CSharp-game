@@ -12,7 +12,7 @@ namespace ConsoleApplication1 {
 
         public Point() { }
         public Point(Point p) {
-            x=p.x;y=p.y;
+            x=p.x;y=p.y;symbol=p.symbol;
         }
         public Point(int _x,int _y,char _s) {
             x=_x;y=_y;symbol=_s;
@@ -26,9 +26,13 @@ namespace ConsoleApplication1 {
             switch (dir) {
                 case Direction.LEFT:  x=x-offset;break;
                 case Direction.RIGHT:  x=x+offset;break;
-                case Direction.UP:  y=y+offset;break;
-                case Direction.DOWN:  y=y-offset;break;
+                case Direction.UP:  y=y-offset;break;
+                case Direction.DOWN:  y=y+offset;break;
             }
+        }
+        public void Clear() {
+            symbol=' ';
+            Draw();
         }
         public override string ToString() {
             return x+", "+y+", "+symbol;

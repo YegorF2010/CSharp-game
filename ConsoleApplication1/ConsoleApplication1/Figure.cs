@@ -8,7 +8,7 @@ namespace ConsoleApplication1 {
     class Figure {
         protected List<Point> plist;
 
-        public void Draw2() {
+        public void Draw() {
             foreach (var el in plist)
                 el.Draw();
         }
